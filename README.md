@@ -24,3 +24,7 @@ Real data is found at https://doi.org/10.5281/zenodo.6817690.
 # Total variation reconstruction
 TV.py contains code to reproduce the TV reconstructions used for comparison in the paper. 
 This script requires installation of CIL (https://tomographicimaging.github.io/CIL/nightly/index.html)
+
+# Samples from SGP prior
+SGPsample.py contains code to obtain and plot samples from the SGP prior used on the pipe image.
+Installation of CUQIpy is required. This code runs on a pre-released version of CUQIpy. Install via command: pip install git+https://github.com/CUQI-DTU/CUQIpy.git@sprint16_add_JointModel 
