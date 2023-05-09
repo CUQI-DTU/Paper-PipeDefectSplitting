@@ -16,7 +16,7 @@ import sys
 
 import astra
 
-sys.path.append('../../CUQIpy/')
+sys.path.append('../CUQIpy/')
 import cuqi
 
 #%%

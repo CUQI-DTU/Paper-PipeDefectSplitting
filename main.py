@@ -24,7 +24,7 @@ from PIL import Image
 import funs
 import postprocessfuns as pp
 
-sys.path.append('../../CUQIpy/') # Delete this line if cuqipy is installed as described above.
+sys.path.append('../CUQIpy/') # Delete this line if cuqipy is installed as described above.
 
 import cuqi
 
@@ -261,10 +261,10 @@ A_joint = A_z + A_d
 # Setup likelihood, joint distribution and sampler
 b  = cuqi.distribution.Gaussian(mean = A_joint, sqrtprec = np.sqrt(lambd), geometry=A.range_geometry, name = "b")
 P = cuqi.distribution.JointDistribution(b, z, d, s, w)
+np.random.seed(1000)
 sampler = cuqi.sampler.Gibbs(P(b=b_data), {'z': cuqi.sampler.Linear_RTO, 'd': cuqi.sampler.Linear_RTO, 's': funs.myIGConjugate, 'w': funs.myGammaSampler})
     
 #%% Sample
-np.random.seed(1000)
 print('\n***MCMC***\n')
 f = open(path + "log.txt", "w")
 f.write('\n***MCMC***\n')
